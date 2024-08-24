@@ -19,7 +19,7 @@ function App() {
       }
     } catch (error) {
       console.error("Error parsing todos from localStorage:", error);
-      localStorage.removeItem("todos"); // Clear invalid data
+      localStorage.removeItem("todos"); 
     }
   }, [])
 
@@ -55,7 +55,7 @@ function App() {
   const handleAdd = () => {
     const newTodos = [...todos, { id: uuidv4(), todo, isCompleted: false }];
     setTodos(newTodos);
-    localStorage.setItem("todos", JSON.stringify(newTodos)); // Save to localStorage here
+    localStorage.setItem("todos", JSON.stringify(newTodos));
     setTodo("");
   }
 
