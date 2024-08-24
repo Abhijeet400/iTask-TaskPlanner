@@ -45,6 +45,7 @@ function App() {
   const handleDelete = (e, id) => {
     const newTodos = todos.filter(item => item.id !== id);
     setTodos(newTodos);
+    localStorage.setItem("todos", JSON.stringify(newTodos));
   }
 
   const handleChange = (e) => {
