@@ -24,6 +24,10 @@ function App() {
     }
   }, [])
 
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
   const saveToLS = () => {
     if (todo.trim().length > 0) {
       setTodos([...todos, { id: uuidv4(), todo: todo.trim(), isCompleted: false }]);
